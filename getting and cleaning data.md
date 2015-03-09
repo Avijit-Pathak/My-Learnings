@@ -5,10 +5,10 @@
 4. Report the excat steps to show how you reached the tidy data
 
 #Types of raw data
-*binary file
-*excel file
-*JSON data
-*hand entered
+	*binary file
+	*excel file
+	*JSON data
+	*hand entered
 
 #Tidy data
 *one variable per column
