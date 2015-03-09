@@ -28,3 +28,14 @@ dateDownload <- date() # stores the date of download
 cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the file in RAM
 
 
+*another important parameter*
+	*na.strings: set the character that represents the missing values
+	*quote=""  : for empty data values
+
+## Reading Excel File
+	*Use the package xlsx
+>library(xlsx)
+>cameradData <- read.xlsx("directory",sheetIndex=1,header=T)
+
+	* read.xlsx can also be used to read specific rows and columns using *colIndex* *rowIndex*
+	* to use colIndex and rowIndex you first have to specify their values
