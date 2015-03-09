@@ -48,9 +48,13 @@ cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the 
 1.Start by loading the XML package.
 
 >library(XML)
+
 >fileUrl <- "type the Url here"
+
 >doc <- xmlTreeParse(fileUrl,useInternal=TRUE) #used to load the doc in the RAM
+
 >rootnode <- smlRoot(doc) #wrapper element for the doc
+
 >xmlName(rootNode) #gives the main heading
 
 #### Subsetting can be used to acceses internal elements
@@ -61,6 +65,7 @@ cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the 
 	*XPath Language for better understanding of XML
  
 >xpathSApply(rootNode,"//name",xmlValue) #gets all the elements tagged with name
+
 >xpathSApply(rootNode,"//price",xmlValue)
 
 ## JSON
@@ -74,7 +79,12 @@ cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the 
 
 ### Writing data frames to JSON
 >myjson <- toJSON(iris,pretty=TRUE) #converts the iris data set to json
+
 >cat(myjson)
 
 #### Helps to covert the file to be used by an API that uses JSON file
+
+## data.table package
+
+
 
