@@ -53,7 +53,7 @@ cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the 
 
 >doc <- xmlTreeParse(fileUrl,useInternal=TRUE) #used to load the doc in the RAM
 
->rootnode <- smlRoot(doc) #wrapper element for the doc
+>rootNode <- xmlRoot(doc) #wrapper element for the doc
 
 >xmlName(rootNode) #gives the main heading
 
@@ -86,5 +86,23 @@ cameraData <- read.table("directory", sep="seperator", header=T/F) #to read the 
 
 ## data.table package
 
+~~~
+library(data.table)
+DF = data.frame(x=rnorm(9),y=rep(c("a","b","c"),each=3),z=rnorm(9))
+#### makes a data frame with 3 column x,y,z
+~~~
 
+>DT[,w:=z^2] #used to add another column to the data frame which is sq. of z
+
+	*can perform multiple step fnction
+
+> DT[,m:={temp <- (x+z); log2(temp+5)}] # the last expression is evaluated
+
+	*can also add binary/TRUE FALSE variables
+
+>DT[,b:=mean(x+w),by=a]
+
+#### takes the mean of cols x and w and places it in rows where a=TRUE and a=FALSE seperately
+
+	* .N function counts the no. of times something appears
 
